@@ -2,17 +2,18 @@
 
 [![ci](https://github.com/tuck1s/proj/actions/workflows/ci.yaml/badge.svg)](https://github.com/tuck1s/proj/actions/workflows/ci.yaml)
 
-This is a simple Python project structure with source files that build into a single command-line tool.
+This is a simple Python project template, with source files that build a single command-line tool.
 
-`pip` is used to install project dependencies. To avoid running this as root, the container runs as user `vscode`.
+`pip` is used to install project dependencies. The container runs as user `vscode`.
 
 ## Tests
-`pytest` tests are included, these can be opened and run locally or in a Docker container.
+`pytest` and example unit tests are included.
 
 The tests can be run from the vscode [testing menu](https://code.visualstudio.com/docs/python/testing#_configure-tests), or from a terminal.
 
 ```
 pytest
+
 ===================================================== test session starts ======================================================
 platform linux -- Python 3.12.9, pytest-8.3.5, pluggy-1.5.0
 rootdir: /workspaces/proj
@@ -27,13 +28,13 @@ tests/test_module2.py .                                                         
 ====================================================== 4 passed in 0.07s =======================================================
 ```
 
-In [test_cli.py](.tests/test_cli.py)
-* `unittest.mock.patch` is used to mock * `argparse.ArgumentParser.parse_args` to simulate different command-line arguments.
-`patch('builtins.print')` is used to mock the print function to verify the output.
+Command-line arguments are exercised by [test_cli.py](.tests/test_cli.py):
+* `unittest.mock.patch` simulates different command-line arguments (`argparse.ArgumentParser.parse_args`).
+* `patch('builtins.print')` is mocks the print function to verify the output.
 
-## Code coverage
+## Code coverage and visual display
 
-"Run test with Coverage" can be used from the VS code test explorer menu, which uses `pytest-cov`.
+"Run test with Coverage" (using `pytest-cov`) can be used from the VS code test explorer menu.
 The popular [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters) extension shows the results visually. This is installed into the container.
 
 
