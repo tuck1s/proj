@@ -1,3 +1,4 @@
 # List dependencies here if needed
 # ruamel.yaml
 pytest
+pytest-cov
