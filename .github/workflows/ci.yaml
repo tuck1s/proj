@@ -28,12 +28,21 @@ jobs:
 
     - name: Run tests with coverage
       run: |
-        ~/.local/bin/pytest --cov=proj --cov-report=xml
-
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v3
+         ~/.local/bin/pytest --cov=proj --cov-report=xml --cov-report=term
+    - name: Upload coverage report as artifact
+      uses: actions/upload-artifact@v4
       with:
-        file: ./coverage.xml
-        flags: unittests
-        name: codecov-umbrella
-        fail_ci_if_error: true
+        name: coverage-report
+        path: coverage.xml
+    - name: Annotate PR with coverage summary
+      if: github.event_name == 'pull_request'
+      uses: dorny/test-reporter@v1
+      with:
+        name: Coverage Report
+        path: coverage.xml
+        reporter: junit
+
+# If you don't want to use coverage, you can use the following configuration 
+#    - name: Run tests
+#      run: |
+#         ~/.local/bin/pytest
