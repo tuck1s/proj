@@ -1,0 +1,30 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+    "name": "Python Dev Container",
+    // Use a Dockerfile instead of an image
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+//    "postCreateCommand": "export PATH=$HOME/.local/bin:$PATH && pip install --user --no-cache-dir -r requirements.txt",
+    "postCreateCommand": "export PATH=$HOME/.local/bin:$PATH && pip install --user --no-cache-dir -r requirements.txt",
+
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {},
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [],
+
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.debugpy",
+                "github.vscode-github-actions"
+            ]
+        }
+    },
+
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    "remoteUser": "vscode"
+}

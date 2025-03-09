@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 from proj import f1, f2
 
