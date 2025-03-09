@@ -14,3 +14,6 @@ WORKDIR /workspaces/proj
 
 # Switch to the non-root user
 USER vscode
+
+# Latest version of pip tooling
+RUN pip install --upgrade pip
