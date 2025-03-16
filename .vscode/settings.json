@@ -7,5 +7,4 @@
     "python.analysis.extraPaths": [
         "./proj"
     ],
-    "python.envFile": "${workspaceFolder}/.env"
 }
