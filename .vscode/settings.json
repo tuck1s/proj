@@ -7,7 +7,5 @@
     "python.analysis.extraPaths": [
         "./proj"
     ],
-    "terminal.integrated.env.osx": {
-        "PYTHONPATH": "/opt/venv"
-    }
+    "python.envFile": "${workspaceFolder}/.env"
 }

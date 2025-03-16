@@ -3,29 +3,28 @@
 {
   // Pick name from predefined variable - see https://code.visualstudio.com/docs/editor/variables-reference
   "name": "${localWorkspaceFolderBasename}",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    // Features to add to the dev container. More info: https://containers.dev/features.
-    "features": {},
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {},
 
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    "forwardPorts": [],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [],
 
-    // Configure tool-specific properties.
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-python.debugpy",
-                "ryanluker.vscode-coverage-gutters"
-            ]
-        }
-    },
-    // Include container user path for e.g. pytest tooling.
-    "remoteEnv": {
-        "PATH": "/opt/myenv/bin:${containerEnv:PATH}",
-        "PYTHONPATH": "${containerWorkspaceFolder}"
-
-    },
-    "postCreateCommand": "/opt/myenv/bin/pip3 install -r requirements.txt && exec bash"
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.debugpy",
+        "ryanluker.vscode-coverage-gutters"
+      ]
+    }
+  },
+  // Include container user path for e.g. pytest tooling.
+  "remoteEnv": {
+    "PATH": "/opt/myenv/bin:${containerEnv:PATH}",
+    "PYTHONPATH": "${containerWorkspaceFolder}"
+  },
+  "postCreateCommand": "/opt/myenv/bin/pip3 install -r requirements.txt && exec bash"
 }
