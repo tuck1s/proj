@@ -26,5 +26,9 @@
     "PATH": "/opt/myenv/bin:${containerEnv:PATH}",
     "PYTHONPATH": "${containerWorkspaceFolder}"
   },
+  // pass in user's git credentials
+  "mounts": [
+    "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
+  ],
   "postCreateCommand": "/opt/myenv/bin/pip3 install -r requirements.txt && exec bash"
 }
