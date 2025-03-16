@@ -8,6 +8,6 @@
         "./proj"
     ],
     "terminal.integrated.env.osx": {
-        "PYTHONPATH": "${workspaceFolder}"
+        "PYTHONPATH": "/opt/venv"
     }
 }

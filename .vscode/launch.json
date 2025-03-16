@@ -17,9 +17,6 @@
             "request": "launch",
             "program": "${workspaceFolder}/proj/cli.py",
             "console": "integratedTerminal",
-            "env": {
-                "PYTHONPATH": "${workspaceFolder}"
-            },
             "args": [
                 "f1",
                 "10"

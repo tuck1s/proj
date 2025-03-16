@@ -6,8 +6,6 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "postCreateCommand": "pip install --user --no-cache-dir -r requirements.txt",
-
     // Features to add to the dev container. More info: https://containers.dev/features.
     "features": {},
 
@@ -23,13 +21,11 @@
             ]
         }
     },
-
     // Include container user path for e.g. pytest tooling.
     "remoteEnv": {
-        "PATH": "${containerEnv:PATH}:/home/vscode/.local/bin",
-        "PYTHONPATH": "${containerEnv:PYTHONPATH}:/workspaces/${localWorkspaceFolderBasename}"
+        "PATH": "/opt/myenv/bin:${containerEnv:PATH}",
+        "PYTHONPATH": "${containerWorkspaceFolder}"
+
     },
-    
-    // More info: https://aka.ms/dev-containers-non-root.
-    "remoteUser": "vscode"
+    "postCreateCommand": "/opt/myenv/bin/pip3 install -r requirements.txt && exec bash"
 }
