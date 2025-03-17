@@ -26,7 +26,7 @@
     "PATH": "/opt/myenv/bin:${containerEnv:PATH}",
     "PYTHONPATH": "${containerWorkspaceFolder}"
   },
-  // pass in user's git credentials
+  // Pass in user's git credentials
   "mounts": [
     "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached"
   ],
